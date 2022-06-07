@@ -1,0 +1,14 @@
+{
+	"watch": [
+		"src"
+	],
+	"ext": "js",
+	"ignore": [
+		".git",
+		"*.test.js",
+		"*.test.ts",
+		"node_modules/*",
+		"test/*"
+	],
+	"exec": "node ./src/index.js"
+}
