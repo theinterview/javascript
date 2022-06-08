@@ -1,0 +1,40 @@
+{
+	"users": [
+		{
+			"id": "00102",
+			"username": "xeres12",
+			"updated_on": "05-06-2022",
+			"created_on": "02-02-2022",
+			"active": "1",
+			"debit": "14",
+			"credit": "12"
+		},
+		{
+			"id": "7770123",
+			"username": "fzd333",
+			"updated_on": "10-04-2022",
+			"created_on": "19-01-2019",
+			"active": "0",
+			"debit": "16",
+			"credit": "4"
+		},
+		{
+			"id": "3022",
+			"username": "the_cyr889",
+			"updated_on": "15-03-2021",
+			"created_on": "02-01-2018",
+			"active": "1",
+			"debit": "1",
+			"credit": "32"
+		},
+		{
+			"id": "100078",
+			"username": "ash7",
+			"updated_on": "04-03-2022",
+			"created_on": "02-02-2017",
+			"active": "1",
+			"debit": "0",
+			"credit": "40"
+		}
+	]
+}
