@@ -39,8 +39,9 @@ module.exports = () => {
 	console.log('Total users\' balance =', totalUsersBalance);
 	*/
 
-	const { users } = JsonData;
+	let { users } = JsonData;
 
+	/*
 	const shortestUsernameLength = users.reduce((acc, curr) => {
 		const usernameLength = curr.username.toString().length;
 
@@ -52,6 +53,8 @@ module.exports = () => {
 	}, users[0].username.toString().length);
 
 	console.log('Shorted username character length =', shortestUsernameLength);
+	*/
+	// ########################################
 
 	// Return an object with 2 properties, "active" and "inactive" counts for all users
 	// const usersActiveAndInactiveCounts = users.reduce((acc, curr) => {
@@ -78,6 +81,9 @@ module.exports = () => {
 	// 	return acc;
 	// }, {});
 
+	// ########################################
+
+	/*
 	// Same result as above, but more readable and less code
 	const usersActiveAndInactiveCounts = users.reduce((acc, curr) => {
 		const active = curr.active === "1";
@@ -92,5 +98,40 @@ module.exports = () => {
 	}, { active: 0, inactive: 0 });
 
 	console.log('Users active/inactive counts =', usersActiveAndInactiveCounts);
+	*/
 
+	// ########################################
+
+	// console.table(users);
+
+	printSubHeader('Slice');
+
+	// first arg = starting index (included)
+	// last arg = end index (but not included)
+	// let slicedUsers = users.slice(1, 3);
+	// console.table(slicedUsers);
+	let users2 = [...users];
+	console.table(users2);
+	users2 = users2.slice(1, 3);
+
+	console.table(users2);
+
+
+	printSubHeader('Splice');
+
+	// console.table(users);
+	console.table(users);
+	// These 2 vars are redundant because if we pass negative (-) numbers, it starts from the right to left
+	const usersLastIndex = users.length - 1;
+	const usersSecondToLastIndex = users.length - 2;
+	// console.table(users[usersLastIndex]);
+
+	// Splice returns the elements that were deleted
+	// let splicedUsers = users.splice(usersSecondToLastIndex, 1);
+	// let splicedUsers = users.splice(-3);
+	users.splice(-3);
+
+	console.table(users);
+
+	// console.table(splicedUsers);
 };
