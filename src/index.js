@@ -6,6 +6,7 @@
 // const _equality = require('./equality');
 // const _class = require('./class');
 const _array = require('./array');
+const _math = require('./math');
 
 module.exports = (() => {
 	// _this();
@@ -16,4 +17,5 @@ module.exports = (() => {
 	// _equality();
 	// _class();
 	_array();
+	_math();
 })();

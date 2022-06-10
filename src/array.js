@@ -1,7 +1,7 @@
 "use strict";
 
 const { printHeader, printSubHeader } = require('./utils');
-const JsonData = require('./data.json');
+const { users, words } = require('./data.json');
 
 module.exports = () => {
 	printHeader('Lesson: Array');
@@ -17,8 +17,8 @@ module.exports = () => {
 		return a[property] < b[property] ? -1 : 1;
 	});
 
-	const sortByUsernameAsc = arraySortString(JsonData.users, 'username');
-	const sortByUsernameDesc = arraySortString(JsonData.users, 'username', false);
+	const sortByUsernameAsc = arraySortString(users, 'username');
+	const sortByUsernameDesc = arraySortString(users, 'username', false);
 
 	console.log('// Ascending');
 	console.log(sortByUsernameAsc);
@@ -28,18 +28,16 @@ module.exports = () => {
 	*/
 
 	// Reduce
-	printSubHeader('Reduce: Get total balance for all users\' debit and credit');
+	// printSubHeader('Reduce: Get total balance for all users\' debit and credit');
 
 	/*
-	const totalUsersBalance = JsonData.users.reduce((acc, curr) => {
+	const totalUsersBalance = users.reduce((acc, curr) => {
 		const balance = Number(curr.debit) - Number(curr.credit);
 		return acc + balance;
 	}, 0);
 
 	console.log('Total users\' balance =', totalUsersBalance);
 	*/
-
-	let { users } = JsonData;
 
 	/*
 	const shortestUsernameLength = users.reduce((acc, curr) => {
@@ -102,6 +100,7 @@ module.exports = () => {
 
 	// ########################################
 
+	/*
 	// console.table(users);
 
 	printSubHeader('Slice');
@@ -134,4 +133,45 @@ module.exports = () => {
 	console.table(users);
 
 	// console.table(splicedUsers);
+	*/
+
+	// ########################################
+	printSubHeader('Return 4 random words with length of 5 chars');
+
+	// Words in the context refers to the words array under data.json file
+	const getWordsWithXLength = (x = 0) => words.reduce((acc, curr) => {
+		if (curr.length === x) {
+			acc.push(curr);
+		}
+		return acc;
+	}, []);
+
+	const getXNumberOfRandomWords = (xRandom, xWordLength) => getWordsWithXLength(xWordLength)[Math.floor(Math.random() * xRandom)];
+
+	// console.table(getWordsWithXLength(6));
+	// console.table(getXNumberOfRandomWords(3, 6));
+	// console.log(Math.floor(Math.random(4) * 4))
+
+	const initialArr = Array(8).fill('Hello');
+
+	const slicedInitialArr = [...initialArr.slice(0, 2)];
+	const splicedInitialArr = [...initialArr].splice(0, 2, ['Goodbye']);
+	// Object.freeze(initialArr);
+
+	// initialArr.splice(-1);
+	printSubHeader('initialArr');
+	console.table(initialArr);
+
+	// printSubHeader('slicedInitialArr');
+	// console.table(slicedInitialArr);
+
+	// printSubHeader('splicedInitialArr');
+	// console.table(splicedInitialArr);
+
+	// console.table(initialArr.find(x => x === null));
+
+	// closures/scopes
+	// different methods of array
+
+	console.log(11 % 2 === 1);
 };
