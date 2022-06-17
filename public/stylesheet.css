@@ -1,0 +1,30 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 10px;
+	width: 100%;
+	height: auto;
+	min-height: 100vh;
+}
+
+body {
+	font-size: 1.8rem;
+	font-family: sans-serif;
+	color: black;
+	background-color: wheat;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+#root {
+	max-width: 80%;
+	margin: 0 10%;
+}

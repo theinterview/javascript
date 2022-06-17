@@ -5,8 +5,10 @@
 // const _console = require('./console');
 // const _equality = require('./equality');
 // const _class = require('./class');
-const _array = require('./array');
-const _math = require('./math');
+// const _array = require('./array');
+// const _math = require('./math');
+// const _timeCountDown = require('./functions/timeCountDown');
+const _htmlServer = require('./htmlserver');
 
 module.exports = (() => {
 	// _this();
@@ -16,6 +18,8 @@ module.exports = (() => {
 	// _console();
 	// _equality();
 	// _class();
-	_array();
-	_math();
+	// _array();
+	// _math();
+	// _timeCountDown();
+	_htmlServer();
 })();
